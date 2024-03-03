@@ -1,31 +1,31 @@
 #!/usr/bin/env bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
+PATH =/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+导出路径
 
-# fonts color
-Green="\033[32m"
-Red="\033[31m"
-Yellow="\033[33m"
-GreenBG="\033[42;37m"
-RedBG="\033[41;37m"
-Font="\033[0m"
-# fonts color
+# 字体颜色
+绿色=“\0 33 [32m”
+红色=“\0 33 [31m”
+黄色=“\0 33 [33m”
+绿色BG =“\0 33 [42;37m”
+红色BG =“\0 33 [41;37m”
+字体=“\0 33 [0m”
+# 字体颜色
 
-# variable
-FRP_VERSION=0.54.0
-REPO=stilleshan/frps
-WORK_PATH=$(dirname $(readlink -f $0))
-FRP_NAME=frps
-FRP_PATH=/usr/local/frp
-PROXY_URL="https://mirror.ghproxy.com/"
+＃多变的
+FRP_版本= 0 .54.0
+REPO =JSCZZ/FRPs
+WORK_PATH =$(目录名 $(readlink -f $0 ))
+FRP_NAME =frps
+FRP_PATH = / usr / local / frp
+PROXY_URL =“https://mirror.ghproxy.com/”
 
-# check frps
-if [ -f "/usr/local/frp/${FRP_NAME}" ] || [ -f "/usr/local/frp/${FRP_NAME}.toml" ] || [ -f "/lib/systemd/system/${FRP_NAME}.service" ];then
-    echo -e "${Green}=========================================================================${Font}"
-    echo -e "${RedBG}当前已退出脚本.${Font}"
-    echo -e "${Green}检查到服务器已安装${Font} ${Red}${FRP_NAME}${Font}"
-    echo -e "${Green}请手动确认和删除${Font} ${Red}/usr/local/frp/${Font} ${Green}目录下的${Font} ${Red}${FRP_NAME}${Font} ${Green}和${Font} ${Red}/${FRP_NAME}.toml${Font} ${Green}文件以及${Font} ${Red}/lib/systemd/system/${FRP_NAME}.service${Font} ${Green}文件,再次执行本脚本.${Font}"
-    echo -e "${Green}参考命令如下:${Font}"
+# 检查 frps
+if [ -f  “/usr/local/frp/ ${FRP_NAME} ” ] || [ -f   "/usr/local/frp/ ${FRP_NAME} .toml" ] || [ -f   "/lib/systemd/system/ ${FRP_NAME} .service" ];然后
+    echo -e   " ${绿色} ============================================ == =================================== ${字体} "
+    echo -e   " ${RedBG}当前已退出脚本. ${Font} "
+    echo -e   " ${Green}检查到已服务器安装${Font} ${Red} ${FRP_NAME} ${Font} "    
+    echo -e  " ${Green}请手动确认和删除${Font} ${Red} /usr/local/frp/ ${Font} ${Green}目录下的${Font} ${Red} ${FRP_NAME } ${字体} ${绿色}和${字体} ${红色} / ${FRP_NAME} .toml ${ 字体} ${绿色}文件以及${ 字体} ${红色} /lib/systemd/system/ ${FRP_NAME } .service ${Font} ${Green}文件，再次执行本脚本。${Font} "                  
+    echo -e   " ${Green}参考命令如下: ${Font} "
     echo -e "${Red}rm -rf /usr/local/frp/${FRP_NAME}${Font}"
     echo -e "${Red}rm -rf /usr/local/frp/${FRP_NAME}.toml${Font}"
     echo -e "${Red}rm -rf /lib/systemd/system/${FRP_NAME}.service${Font}"
@@ -33,7 +33,7 @@ if [ -f "/usr/local/frp/${FRP_NAME}" ] || [ -f "/usr/local/frp/${FRP_NAME}.toml"
     exit 2
 fi
 
-while ! test -z "$(ps -A | grep -w ${FRP_NAME})"; do
+尽管！测试-z  " $(ps -A | grep -w ${FRP_NAME} ) " ; 做
     FRPSPID=$(ps -A | grep -w ${FRP_NAME} | awk 'NR==1 {print $1}')
     kill -9 $FRPSPID
 done
