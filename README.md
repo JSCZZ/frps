@@ -1,6 +1,6 @@
 # 框架
 ## 项目简介
-##修改自用
+##修改自用  感谢：https://github.com/stilleshan/frps
 
 基于[ fatedier/frp ] ( https://github.com/fatedier/frp )原版frp内网镜像服务端frps的一键安装卸载脚本和docker镜像。支持Linux服务器和docker等多种安装环境配置。
 
