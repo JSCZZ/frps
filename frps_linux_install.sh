@@ -13,7 +13,7 @@ PATH =/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 ＃多变的
 FRP_版本= 0 .54.0
-REPO =JSCZZ/FRPs
+REPO =JSCZZ/frps
 WORK_PATH =$(目录名 $(readlink -f $0 ))
 FRP_NAME =frps
 FRP_PATH = / usr / local / frp
